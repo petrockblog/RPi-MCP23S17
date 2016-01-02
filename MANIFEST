@@ -2,5 +2,6 @@
 CHANGELOG.txt
 COPYING.txt
 README.txt
-RPi-MCP23S17.py
 setup.py
+RPiMCP23S17/MCP23S17.py
+RPiMCP23S17/__init__.py

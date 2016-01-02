@@ -3,6 +3,14 @@
 Change Log
 ----------
 
+0.2.1
+
+ - Updated documentation
+
+0.2.0
+
+ - Reorganized module structure
+
 0.1.1
 
  - Enhanced package setup script setup.py

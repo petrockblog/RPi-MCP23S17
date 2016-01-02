@@ -36,8 +36,8 @@ classifiers = ['Development Status :: 5 - Production/Stable',
 install_requires = ['RPi.GPIO',
                     'spidev']
 
-setup(name             = 'RPi-MCP23S17',
-      version          = '0.1.1',
+setup(name             = 'RPiMCP23S17',
+      version          = '0.2.1',
       author           = 'Florian Mueller',
       author_email     = 'contact@petrockblock.com',
       description      = 'A module to access GPIO expanders MCP23S17 from a Raspberry Pi.',
@@ -46,4 +46,4 @@ setup(name             = 'RPi-MCP23S17',
       keywords         = 'Raspberry Pi GPIO MCP23S17 SPI',
       url              = 'http://github.com/petrockblog/RPi-MCP23S17',
       classifiers      = classifiers,
-      py_modules       = ['RPi-MCP23S17'])
+      packages         = ['RPiMCP23S17'])
