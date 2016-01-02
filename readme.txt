@@ -20,6 +20,10 @@ As a quick overview, the module provides the following functions. Refer to the m
 Installation
 ------------
 
+If not already done, you need to install PIP via::
+
+	sudo apt-get install python-pip
+
 The module can be installed via PIP with::
 
 	pip install RPi-MCP23S17
