@@ -3,6 +3,10 @@
 Change Log
 ----------
 
+0.2.2
+
+ - Fixed example in documentation
+
 0.2.1
 
  - Updated documentation
