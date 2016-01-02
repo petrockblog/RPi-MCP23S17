@@ -33,14 +33,17 @@ classifiers = ['Development Status :: 5 - Production/Stable',
                'Topic :: Home Automation',
                'Topic :: System :: Hardware']
 
+install_requires = ['RPi.GPIO',
+                    'spidev']
+
 setup(name             = 'RPi-MCP23S17',
-      version          = '0.1.0',
+      version          = '0.1.1',
       author           = 'Florian Mueller',
       author_email     = 'contact@petrockblock.com',
       description      = 'A module to access GPIO expanders MCP23S17 from a Raspberry Pi.',
-      long_description = open('README.txt').read(),
+      long_description = open('README.txt').read() + open('CHANGELOG.txt').read(),
       license          = 'MIT',
-      keywords         = 'Raspberry Pi GPIO MCP23S17',
+      keywords         = 'Raspberry Pi GPIO MCP23S17 SPI',
       url              = 'http://github.com/petrockblog/RPi-MCP23S17',
       classifiers      = classifiers,
       py_modules       = ['RPi-MCP23S17'])

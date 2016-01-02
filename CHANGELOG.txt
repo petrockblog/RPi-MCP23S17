@@ -1,0 +1,12 @@
+Change Log
+----------
+
+0.1.1
+
+ - Enhanced package setup script setup.py
+ - Updated documentation
+
+
+0.1.0
+
+ - Initial release
