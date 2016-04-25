@@ -22,7 +22,7 @@ Installation
 
 If not already done, you need to install PIP via::
 
-    sudo apt-get install python-pip
+    sudo apt-get install python-dev python-pip
 
 Install from `PyPI <https://pypi.python.org/pypi/RPiMCP23S17>`_::
 
