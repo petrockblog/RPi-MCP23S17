@@ -211,13 +211,14 @@ class MCP23S17(object):
         assert (pin < 16)
 
         if (pin < 8):
-            self._GPIOA = self._readRegister(MCP23S17_GPIOA)
+            self._GPIOA = self._readRegister(MCP23S17.MCP23S17_GPIOA)
             if ((self._GPIOA & (1 << pin)) != 0):
                 return MCP23S17.LEVEL_HIGH
             else:
                 return MCP23S17.LEVEL_LOW
         else:
-            self._GPIOB = self._readRegister(MCP23S17_GPIOB)
+            self._GPIOB = self._readRegister(MCP23S17.MCP23S17_GPIOB)
+            print "GPIOB: %s" % self._GPIOB
             pin &= 0x07
             if ((self._GPIOB & (1 << pin)) != 0):
                 return MCP23S17.LEVEL_HIGH
