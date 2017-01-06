@@ -301,7 +301,7 @@ class MCP23S17(object):
     def _readRegisterWord(self, register):
         assert(self.isInitialized)
 
-        buffer = []
+        buffer = [0, 0]
         buffer[0] = self._readRegister(register)
         buffer[1] = self._readRegister(register + 1)
         return ((buffer[1] << 8) | buffer[0])
