@@ -218,7 +218,6 @@ class MCP23S17(object):
                 return MCP23S17.LEVEL_LOW
         else:
             self._GPIOB = self._readRegister(MCP23S17.MCP23S17_GPIOB)
-            print "GPIOB: %s" % self._GPIOB
             pin &= 0x07
             if ((self._GPIOB & (1 << pin)) != 0):
                 return MCP23S17.LEVEL_HIGH
