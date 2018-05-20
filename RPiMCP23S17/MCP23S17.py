@@ -117,7 +117,7 @@ class MCP23S17(object):
         self._writeRegister(MCP23S17.MCP23S17_IOCON, MCP23S17.IOCON_INIT)
 
         # set defaults
-        for index in xrange(0, 15):
+        for index in range(16):
             self.setDirection(index, MCP23S17.DIR_INPUT)
             self.setPullupMode(index, MCP23S17.PULLUP_ENABLED)
 
@@ -326,7 +326,7 @@ if __name__ == '__main__':
         mcp1.setDirection(x, mcp1.DIR_OUTPUT)
         mcp2.setDirection(x, mcp1.DIR_OUTPUT)
 
-    print "Starting blinky on all pins (CTRL+C to quit)"
+    print("Starting blinky on all pins (CTRL+C to quit)")
     while (True):
         for x in range(0, 16):
             mcp1.digitalWrite(x, MCP23S17.LEVEL_HIGH)
