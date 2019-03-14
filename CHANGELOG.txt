@@ -3,7 +3,7 @@
 Change Log
 ----------
 
-0.3.0
+1.0.0
 
  - Added possibility to set reset pin
 

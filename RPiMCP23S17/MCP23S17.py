@@ -77,17 +77,17 @@ class MCP23S17(object):
     MCP23S17_CMD_WRITE = 0x40
     MCP23S17_CMD_READ = 0x41
 
-    def __init__(self, bus=0, pin_cs=0, pin_reset=-1, deviceID=0x00):
+    def __init__(self, bus=0, pin_cs=0, pin_reset=-1, device_id=0x00):
         """
         Constructor
         Initializes all attributes with 0.
 
         Keyword arguments:
-        deviceID -- The device ID of the component, i.e., the hardware address (default 0.0)
+        device_id -- The device ID of the component, i.e., the hardware address (default 0.0)
         pin_cs -- The Chip Select pin of the MCP
         pin_reset -- The Reset pin of the MCP
         """
-        self.deviceID = deviceID
+        self.device_id = device_id
         self._GPIOA = 0
         self._GPIOB = 0
         self._IODIRA = 0
@@ -274,7 +274,7 @@ class MCP23S17(object):
     def _writeRegister(self, register, value):
         assert (self.isInitialized)
 
-        command = MCP23S17.MCP23S17_CMD_WRITE | ((self.deviceID) << 1)
+        command = MCP23S17.MCP23S17_CMD_WRITE | ((self.device_id) << 1)
 
         self._setSpiMode(self._spimode)
         GPIO.output(self._PIN_MCP_CS, False)
@@ -283,7 +283,7 @@ class MCP23S17(object):
 
     def _readRegister(self, register):
         assert (self.isInitialized)
-        command = MCP23S17.MCP23S17_CMD_READ | ((self.deviceID) << 1)
+        command = MCP23S17.MCP23S17_CMD_READ | ((self.device_id) << 1)
         self._setSpiMode(self._spimode)
         GPIO.output(self._PIN_MCP_CS, False)
         data = self._spi.xfer2([command, register, 0])
@@ -322,10 +322,10 @@ if __name__ == '__main__':
     all pins of two MCP23S17 conponents.
     """
 
-    # you might also want to use the parameters bus, ce, pinCS, or pinReset
+    # you might also want to use the parameters bus, pin_cs, or pin_reset
     # to match your hardware setup
-    mcp1 = MCP23S17(deviceID=0x00)
-    mcp2 = MCP23S17(deviceID=0x01)
+    mcp1 = MCP23S17(device_id=0x00)
+    mcp2 = MCP23S17(device_id=0x01)
     mcp1.open()
     mcp2.open()
 
