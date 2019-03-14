@@ -3,6 +3,10 @@
 Change Log
 ----------
 
+0.3.0
+
+ - Added possibility to set reset pin
+
 0.2.3
 
  - Fixed error "NameError: global name 'MCP23S17_GPIOB' is not defined" in function digitalRead
