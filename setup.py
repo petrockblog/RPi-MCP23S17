@@ -20,7 +20,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from distutils.core import setup, Extension
+# from distutils.core import setup, Extension
+import setuptools
 
 classifiers = ['Development Status :: 5 - Production/Stable',
                'Operating System :: POSIX :: Linux',
@@ -34,10 +35,12 @@ classifiers = ['Development Status :: 5 - Production/Stable',
                'Topic :: System :: Hardware']
 
 install_requires = ['RPi.GPIO',
-                    'spidev']
+                    'spidev',
+                    'time']
 
-setup(name             = 'RPiMCP23S17',
-      version          = '0.2.3',
+setuptools.setup(
+      name             = 'RPiMCP23S17',
+      version          = '1.0.0',
       author           = 'Florian Mueller',
       author_email     = 'contact@petrockblock.com',
       description      = 'A module to access GPIO expanders MCP23S17 from a Raspberry Pi.',
