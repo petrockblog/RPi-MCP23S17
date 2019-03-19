@@ -106,7 +106,7 @@ class MCP23S17(object):
         and sequential operations mode.
         """
         self._setupGPIO()
-        self._spi.open(self.bus, self.ce)
+        self._spi.open(self._bus, self._pin_cs)
         self._writeRegister(MCP23S17.MCP23S17_IOCON, MCP23S17.IOCON_INIT)
 
         # set defaults
@@ -277,17 +277,17 @@ class MCP23S17(object):
         command = MCP23S17.MCP23S17_CMD_WRITE | ((self.device_id) << 1)
 
         self._setSpiMode(self._spimode)
-        GPIO.output(self._PIN_MCP_CS, False)
+        GPIO.output(self._pin_cs, False)
         self._spi.xfer2([command, register, value])
-        GPIO.output(self._PIN_MCP_CS, True)
+        GPIO.output(self._pin_cs, True)
 
     def _readRegister(self, register):
         assert (self.isInitialized)
         command = MCP23S17.MCP23S17_CMD_READ | ((self.device_id) << 1)
         self._setSpiMode(self._spimode)
-        GPIO.output(self._PIN_MCP_CS, False)
+        GPIO.output(self._pin_cs, False)
         data = self._spi.xfer2([command, register, 0])
-        GPIO.output(self._PIN_MCP_CS, True)
+        GPIO.output(self._pin_cs, True)
         return data[2]
 
     def _readRegisterWord(self, register):
@@ -321,11 +321,12 @@ if __name__ == '__main__':
     """The following demo periodically toggles the level of
     all pins of two MCP23S17 conponents.
     """
+    from RPiMCP23S17 import MCP23S17
 
     # you might also want to use the parameters bus, pin_cs, or pin_reset
     # to match your hardware setup
-    mcp1 = MCP23S17(device_id=0x00)
-    mcp2 = MCP23S17(device_id=0x01)
+    mcp1 = MCP23S17.MCP23S17(device_id=0x00)
+    mcp2 = MCP23S17.MCP23S17(device_id=0x01)
     mcp1.open()
     mcp2.open()
 

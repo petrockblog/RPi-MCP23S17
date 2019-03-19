@@ -34,10 +34,6 @@ classifiers = ['Development Status :: 5 - Production/Stable',
                'Topic :: Home Automation',
                'Topic :: System :: Hardware']
 
-install_requires = ['RPi.GPIO',
-                    'spidev',
-                    'time']
-
 setuptools.setup(
       name             = 'RPiMCP23S17',
       version          = '1.0.0',
@@ -49,4 +45,6 @@ setuptools.setup(
       keywords         = 'Raspberry Pi GPIO MCP23S17 SPI',
       url              = 'http://github.com/petrockblog/RPi-MCP23S17',
       classifiers      = classifiers,
+      install_requires = ['RPi.GPIO',
+                          'spidev'],
       packages         = ['RPiMCP23S17'])
