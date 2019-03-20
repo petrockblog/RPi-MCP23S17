@@ -1,2 +1,5 @@
 # distribution files
 *.tar.gz
+.idea
+build/
+dist/

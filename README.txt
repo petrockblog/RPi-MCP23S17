@@ -36,8 +36,8 @@ The following demo peridically toggles all pins of two MCP23S17 components::
     from RPiMCP23S17.MCP23S17 import MCP23S17
     import time
 
-    mcp1 = MCP23S17(bus=0x00, ce=0x00, deviceID=0x00)
-    mcp2 = MCP23S17(bus=0x00, ce=0x00, deviceID=0x01)
+    mcp1 = MCP23S17(bus=0x00, pin_cs=0x00, device_id=0x00)
+    mcp2 = MCP23S17(bus=0x00, pin_cs=0x00, device_id=0x01)
     mcp1.open()
     mcp2.open()
 
@@ -62,7 +62,7 @@ The following demo peridically toggles all pins of two MCP23S17 components::
         mcp2.writeGPIO(0xFFF)
         time.sleep(1)
         
-        mcp1.writeGPIO(0x000)
-        mcp2.writeGPIO(0x0000)
+        mcp1.writeGPIO(0x0)
+        mcp2.writeGPIO(0x0)
         time.sleep(1)
 
